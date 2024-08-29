@@ -16,6 +16,7 @@ MonoBehaviour:
     guid: d1b28252bd374851a6ab7e0efe63adf6
     name: MoreMinecarts
     skipSafetyChecks: 0
+    disableScripts: 0
     accessesExtraAssemblies: 1
     disableHarmonyPatching: 0
     requiredOn: 3
