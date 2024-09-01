@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006282697334801}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.12500001, z: 0.4375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4846622297480223}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
 --- !u!212 &212339917929786754
 SpriteRenderer:
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showOutline: 0
   useOuterOutline: 0
+  isAnimatedForceOutline: 0
 --- !u!114 &114338678644086278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,9 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 1536336809, guid: 3b024c3700b14424aaa1008f2cb49541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  extraIndirectRenderer: 0
-  indirectRendererPivot: {x: 0, y: -0.5, z: 0}
-  indirectRendererOffset: 0.1
 --- !u!114 &114570192080155743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,13 +152,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007549691818550}
+  serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.06250005, z: -0.375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4713874950012828}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: -0, z: -0}
 --- !u!212 &212008590571896676
 SpriteRenderer:
@@ -211,7 +209,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &114565282437426757
@@ -226,9 +224,6 @@ MonoBehaviour:
   m_Script: {fileID: 1536336809, guid: 3b024c3700b14424aaa1008f2cb49541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  extraIndirectRenderer: 0
-  indirectRendererPivot: {x: 0, y: -0.5, z: 0}
-  indirectRendererOffset: 0.1
 --- !u!1 &1013490252141278
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,13 +248,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013490252141278}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4221342017946658}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
 --- !u!114 &114515614054672687
 MonoBehaviour:
@@ -276,14 +271,12 @@ MonoBehaviour:
   weightMultiplier: 1
   useDiscreteOutlineColor: 0
   entityMono: {fileID: 0}
-  interactCooldown: 0
   requiredFactionToInteract: 0
   optionalIcon: {fileID: 0}
   optionalOutlineController: {fileID: 114096373442995495}
   additionalOutlineControllers:
   - {fileID: 114111643101810014}
   spriteObjects: []
-  onlyTriggerActionsOnce: 0
   onUseActions:
   - m_PersistentCalls:
       m_Calls:
@@ -299,13 +292,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onReleaseActions: []
-  onTriggerEnterActions: []
   onTriggerExitActions: []
   radius: 2
   interactingPoints: []
-  allowToUseDuringCutscene: 0
   allowToUseOnlyWhenClaimed: 0
+  ignorePlayerDirection: 0
 --- !u!1 &1235715084886894
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,6 +322,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235715084886894}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -340,7 +332,6 @@ Transform:
   - {fileID: 4850939486017571}
   - {fileID: 4713874950012828}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
 --- !u!114 &114319425755528291
 MonoBehaviour:
@@ -361,97 +352,13 @@ MonoBehaviour:
   interactable: {fileID: 114515614054672687}
   spriteObjects: []
   useSharedTransformAnimations: 1
-  reskinOptions:
-  - sourceSpriteSheetSkin: {fileID: 114428840114935445}
-    spriteObject: {fileID: 0}
-    spriteObjectShadow: {fileID: 0}
-    spriteObjectIndirectLight: {fileID: 0}
-    spriteObjectDefaultMaterial: {fileID: 0}
-    reskins:
-    - objectIDToUseReskinOn: 6551
-      worksForAnyVariation: 1
-      variation: 0
-      isOnlyAppliedDuringSeason: 0
-      textures:
-      - {fileID: 2800000, guid: 6b22aa5b413d92746af357e936a60da2, type: 3}
-      emissiveTextures: []
-      spriteAssetSkin: {fileID: 0}
-      spriteObjectEmissiveColor: {r: 1, g: 1, b: 1, a: 1}
-      spriteObjectIndirectLightColor: {r: 0, g: 0, b: 0, a: 1}
-      spriteObjectMaterialOverride: {fileID: 0}
-    - objectIDToUseReskinOn: 6552
-      worksForAnyVariation: 1
-      variation: 0
-      isOnlyAppliedDuringSeason: 0
-      textures:
-      - {fileID: 2800000, guid: f402709a4bb750c489b0d83d281f5e35, type: 3}
-      emissiveTextures: []
-      spriteAssetSkin: {fileID: 0}
-      spriteObjectEmissiveColor: {r: 1, g: 1, b: 1, a: 1}
-      spriteObjectIndirectLightColor: {r: 0, g: 0, b: 0, a: 1}
-      spriteObjectMaterialOverride: {fileID: 0}
-  - sourceSpriteSheetSkin: {fileID: 114570192080155743}
-    spriteObject: {fileID: 0}
-    spriteObjectShadow: {fileID: 0}
-    spriteObjectIndirectLight: {fileID: 0}
-    spriteObjectDefaultMaterial: {fileID: 0}
-    reskins:
-    - objectIDToUseReskinOn: 6551
-      worksForAnyVariation: 1
-      variation: 0
-      isOnlyAppliedDuringSeason: 0
-      textures:
-      - {fileID: 2800000, guid: 027e21554cf32e443953c4d3324466f5, type: 3}
-      emissiveTextures: []
-      spriteAssetSkin: {fileID: 0}
-      spriteObjectEmissiveColor: {r: 1, g: 1, b: 1, a: 1}
-      spriteObjectIndirectLightColor: {r: 0, g: 0, b: 0, a: 1}
-      spriteObjectMaterialOverride: {fileID: 0}
-    - objectIDToUseReskinOn: 6552
-      worksForAnyVariation: 1
-      variation: 0
-      isOnlyAppliedDuringSeason: 0
-      textures:
-      - {fileID: 2800000, guid: a373c31f7f812094eb838c7c83d77dc0, type: 3}
-      emissiveTextures: []
-      spriteAssetSkin: {fileID: 0}
-      spriteObjectEmissiveColor: {r: 1, g: 1, b: 1, a: 1}
-      spriteObjectIndirectLightColor: {r: 0, g: 0, b: 0, a: 1}
-      spriteObjectMaterialOverride: {fileID: 0}
-  paintableOptions:
-    spriteRenderers: []
-    spriteColorTints: []
-    lights: []
-    spriteSheetSkins: []
-  soundOptions:
-    takeDamageSfx:
-      value: 926580047
-    deathSfx:
-      value: 1045606711
-  particleOptions:
-    particlesToSpawn:
-    - spawnOccasion: 0
-      objectID: 6551
-      particles:
-      - puff: 16
-        positionTransform: {fileID: 4199669382397126}
-        particleCount: 5
-    - spawnOccasion: 0
-      objectID: 6552
-      particles:
-      - puff: 16
-        positionTransform: {fileID: 4199669382397126}
-        particleCount: 5
-    particleSpawnLocations: []
-    particlesToDisableOnLowQuality: []
-  objectVariants: []
   spritesToRandomlyFlip: []
+  gameObjectsToRandomlyFlip: []
   optionalHealthBar: {fileID: 0}
   optionalLightOptimizer: {fileID: 0}
   conditionEffectsHandler: {fileID: 0}
-  conditionsEffectsSettings:
-    stunEffectOffset: {x: 0, y: 0, z: 0}
   outlineControllers: []
+  hasDisableableParticles: 0
   previousHealth: 0
   QUICK_TURN_SPEED_THRESHOLD: 1
   QUICK_STOP_SPEED_DIFF: 0.6
@@ -461,7 +368,7 @@ MonoBehaviour:
   loopBrakeSound: -419141336
 --- !u!95 &95698461783683133
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -469,7 +376,7 @@ Animator:
   m_GameObject: {fileID: 1235715084886894}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1d1c7704dfe09834b97840469dd2030c, type: 2}
+  m_Controller: {fileID: 9100000, guid: e83c526e5ee8f614aad36f04e772091b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -478,7 +385,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1330995483973116
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +410,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330995483973116}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -509,7 +418,6 @@ Transform:
   m_Children:
   - {fileID: 4355724753958520}
   m_Father: {fileID: 4548347823586376}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1374239771631839
 GameObject:
@@ -534,6 +442,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374239771631839}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -541,7 +450,6 @@ Transform:
   m_Children:
   - {fileID: 4720895151482177}
   m_Father: {fileID: 4221342017946658}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
 --- !u!1 &1412448511423505
 GameObject:
@@ -570,13 +478,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412448511423505}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5625, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4846622297480223}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &212073971730766734
 SpriteRenderer:
@@ -644,6 +552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showOutline: 0
   useOuterOutline: 0
+  isAnimatedForceOutline: 0
 --- !u!114 &114525514345062329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,9 +565,6 @@ MonoBehaviour:
   m_Script: {fileID: 1536336809, guid: 3b024c3700b14424aaa1008f2cb49541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  extraIndirectRenderer: 0
-  indirectRendererPivot: {x: 0, y: -0.5, z: 0}
-  indirectRendererOffset: 0.1
 --- !u!114 &114428840114935445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,6 +601,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442704075946483}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.375}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -703,7 +610,6 @@ Transform:
   - {fileID: 4199669382397126}
   - {fileID: 4826237007536491}
   m_Father: {fileID: 4355724753958520}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1497185374753253
 GameObject:
@@ -728,6 +634,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497185374753253}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -735,7 +642,6 @@ Transform:
   m_Children:
   - {fileID: 4792200497595363}
   m_Father: {fileID: 4221342017946658}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1627755523341056
 GameObject:
@@ -763,13 +669,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627755523341056}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0.375, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4355724753958520}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &198629978018216509
 ParticleSystem:
@@ -881,6 +787,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -910,6 +817,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
     startSize:
@@ -1015,6 +923,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
+    gravitySource: 0
     maxNumParticles: 100
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
@@ -1388,6 +1297,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 3
         m_NumAlphaKeys: 2
       minGradient:
@@ -1417,6 +1327,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
   UVModule:
@@ -2341,6 +2252,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -2370,6 +2282,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
@@ -2543,6 +2456,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minVertexDistance: 0.2
     textureMode: 0
+    textureScale: {x: 1, y: 1}
     ribbonCount: 1
     shadowBias: 0.5
     worldSpace: 0
@@ -2585,6 +2499,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 1
+        m_ColorSpace: -1
         m_NumColorKeys: 3
         m_NumAlphaKeys: 2
       minGradient:
@@ -2614,6 +2529,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
     widthOverTrail:
@@ -2665,6 +2581,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -2694,6 +2611,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
   CustomDataModule:
@@ -2732,6 +2650,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -2761,6 +2680,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
     colorLabel0: Color
@@ -2870,6 +2790,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -2899,6 +2820,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
     colorLabel1: Color
@@ -3030,13 +2952,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -3081,13 +3005,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763095269614025}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0.375, z: -0.375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4355724753958520}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1788343735024037
 GameObject:
@@ -3115,13 +3039,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788343735024037}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0.375, z: -0.375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4355724753958520}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &198003207020492905
 ParticleSystem:
@@ -3233,6 +3157,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -3262,6 +3187,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
     startSize:
@@ -3367,6 +3293,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
+    gravitySource: 0
     maxNumParticles: 100
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
@@ -3740,6 +3667,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 3
         m_NumAlphaKeys: 2
       minGradient:
@@ -3769,6 +3697,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
   UVModule:
@@ -4693,6 +4622,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -4722,6 +4652,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
@@ -4895,6 +4826,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minVertexDistance: 0.2
     textureMode: 0
+    textureScale: {x: 1, y: 1}
     ribbonCount: 1
     shadowBias: 0.5
     worldSpace: 0
@@ -4937,6 +4869,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 1
+        m_ColorSpace: -1
         m_NumColorKeys: 3
         m_NumAlphaKeys: 2
       minGradient:
@@ -4966,6 +4899,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
     widthOverTrail:
@@ -5017,6 +4951,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -5046,6 +4981,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
   CustomDataModule:
@@ -5084,6 +5020,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -5113,6 +5050,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
     colorLabel0: Color
@@ -5222,6 +5160,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -5251,6 +5190,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
     colorLabel1: Color
@@ -5382,13 +5322,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -5433,6 +5375,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844235834728442}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -5443,5 +5386,4 @@ Transform:
   - {fileID: 4528490165641590}
   - {fileID: 4443173675805638}
   m_Father: {fileID: 4792200497595363}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}

@@ -9,7 +9,7 @@ namespace MoreMinecarts
 {
     public class MoreMinecartsMod : IMod
     {
-        public const string VERSION = "1.0.0";
+        public const string VERSION = "1.0.1";
         public const string NAME = "More Minecarts";
         private LoadedMod modInfo;
 
